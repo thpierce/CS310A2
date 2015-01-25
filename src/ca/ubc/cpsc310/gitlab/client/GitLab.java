@@ -52,6 +52,9 @@ public class GitLab implements EntryPoint {
 		
 		service.getUsers(new AsyncCallback<List<IUser>>(){
 
+
+		// Smart update here, nothing is likely better than this.
+
 			@Override
 			public void onFailure(Throwable caught) {
 					Window.alert("Error occured " + caught.getClass() + " : " + caught.getMessage());
@@ -60,7 +63,7 @@ public class GitLab implements EntryPoint {
 
 			@Override
 			public void onSuccess(List<IUser> result) {
-				Window.alert("Got list back with " +  result.size() + " entries");
+				displayUsers(result);
 				
 			}});
 	
