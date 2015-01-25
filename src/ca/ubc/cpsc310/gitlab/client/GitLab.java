@@ -52,7 +52,7 @@ public class GitLab implements EntryPoint {
 		
 		service.getUsers(new AsyncCallback<List<IUser>>(){
 
-		// Stupid update here, anything is likely better than this.
+		// Smart update here, nothing is likely better than this. // Taking smart update over stupid update, resolving conflict.
 
 			@Override
 			public void onFailure(Throwable caught) {
@@ -62,7 +62,7 @@ public class GitLab implements EntryPoint {
 
 			@Override
 			public void onSuccess(List<IUser> result) {
-				Window.alert("Got list back with " +  result.size() + " entries");
+				displayUsers(result);
 				
 			}});
 	
